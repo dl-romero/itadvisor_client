@@ -8,10 +8,6 @@
 
 name: pypi-publish
 
-#on:
-#  release:
-#    types: [published]
-
 on:
   workflow_run:
     workflows: [python-release]
