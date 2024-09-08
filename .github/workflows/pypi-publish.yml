@@ -6,11 +6,17 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Upload Python Package
+name: pypi-publish
+
+#on:
+#  release:
+#    types: [published]
 
 on:
-  release:
-    types: [published]
+  workflow_run:
+    workflows: [python-release]
+    types:
+      - completed
 
 permissions:
   contents: read
