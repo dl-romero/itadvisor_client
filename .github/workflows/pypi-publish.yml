@@ -10,7 +10,7 @@ name: pypi-publish
 
 on:
   workflow_run:
-    workflows: [python-release]
+    workflows: [python-release-v2]
     types:
       - completed
 
