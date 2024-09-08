@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "itadvisor_client"
-version = "0.0.7"
+version = "0.0.8"
 authors = [
   { name="David Romero", email="dromero@dromero.dev" },
 ]
@@ -18,5 +18,7 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/dl-romero/itadvisor_client"
+dromero.dev = "https://dromero.dev"
+LinkedIn = "https://www.linkedin.com/in/dromero1/"
+GitHub Repo = "https://github.com/dl-romero/itadvisor_client"
 Issues = "https://github.com/dl-romero/itadvisor_client/issues"
