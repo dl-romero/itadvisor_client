@@ -20,5 +20,5 @@ classifiers = [
 [project.urls]
 dromero.dev = "https://dromero.dev"
 LinkedIn = "https://www.linkedin.com/in/dromero1/"
-GitHub Repo = "https://github.com/dl-romero/itadvisor_client"
+Repository = "https://github.com/dl-romero/itadvisor_client"
 Issues = "https://github.com/dl-romero/itadvisor_client/issues"
