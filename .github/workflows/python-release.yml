@@ -1,5 +1,5 @@
   
-name: python-release-v2
+name: python-release
 on:
   push:
     # Sequence of patterns matched against refs/tags
