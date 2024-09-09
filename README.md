@@ -1,5 +1,5 @@
-# ITAdvisor Client
-An unoffical ITAdvisor API Client. ![image](https://img.shields.io/badge/pypi-3775A9?style=for-the-badge&logo=pypi&logoColor=white) <br> 
+# ![image](https://img.shields.io/badge/pypi-3775A9?style=for-the-badge&logo=pypi&logoColor=white) ITAdvisor Client 
+An unoffical ITAdvisor API Client.<br> 
 <br>
 All capabilities available in the API are supported by this module.
 
