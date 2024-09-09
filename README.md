@@ -4,7 +4,7 @@ An unoffical ITAdvisor API Client.<br>
 <br>
 All capabilities available in the API are supported by this module.<br>
 <br>
-<b>Supported IT Advisor Versions:</b><br>
+<u><b>Supported IT Advisor Versions:</b></u><br>
 - 9.4.4
 
 ## Installation
