@@ -24,5 +24,6 @@ ita_client = ITAdvisor(
     password = "fS0c13tY"
 )
 
-genomes = ita_client.genome_library()
+my_genome = ita_client.genomes.get_genomes_by_id("9ecca877-7b9f-45e8-ac69-929b5ff87b7e")
+
 ```
