@@ -29,89 +29,89 @@ my_genome = ita_client.genomes.get_genomes_by_id("9ecca877-7b9f-45e8-ac69-929b5f
 ```
 ## Sub-Classes
 **assets**
--
--
+- get_assets()
+- patch_assets()
+
 **audit_trail**
--
--
+- in-progress
+
 **authentication**
--
--
+- in-progress
+
 **autentication_servers**
--
--
+- in-progress
+
 **backup**
--
--
+- in-progress
+
 **certificates**
--
--
+- in-progress
+
 **change_request**
--
--
+- in-progress
+
 **change_request_template**
--
--
+- in-progress
+
 **configuration**
--
--
+- in-progress
+
 **custom_properties**
--
--
+- in-progress
+
 **customers**
--
--
+- in-progress
+
 **customers_count**
--
--
+- in-progress
+
 **equipment_browser**
--
--
+- in-progress
+
 **etl_configuration**
--
--
+- in-progress
+
 **genomes**
--
--
+- in-progress
+
 **kpis**
--
--
+- in-progress
+
 **licenses**
--
--
+- in-progress
+
 **mail**
--
--
+- in-progress
+
 **platform_status**
--
--
+- in-progress
+
 **power_capacity**
--
--
+- in-progress
+
 **power_path**
--
--
+- in-progress
+
 **routing**
--
--
+- in-progress
+
 **sensor_mapping**
--
--
+- in-progress
+
 **struxure_on**
--
--
+- in-progress
+
 **svg**
--
--
+- Schneider Electric states DO NOT USE.
+
 **user_groups**
--
--
+- in-progress
+
 **user_message**
--
--
+- in-progress
+
 **users**
--
--
+- in-progress
+
 **work_orders**
--
--
+- in-progress
