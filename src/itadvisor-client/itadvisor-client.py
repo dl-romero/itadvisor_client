@@ -17,37 +17,37 @@ class ITAdvisor:
         self.ssl = ssl
         self.timeout = timeout
 
-        self.assets = Assets(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
-        self.audit_trail = AuditTrail(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
-        self.authentication = Authentication(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
-        self.autentication_servers = AuthenticationServers(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
-        self.backup = Backup(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
-        self.certificates = Certificates(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
-        self.change_request = ChangeRequest(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
-        self.change_request_template = ChangeRequestTemplate(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
-        self.configuration = Configuration(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
-        self.custom_properties = CustomProperties(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
-        self.customers = Customers(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
-        self.customers_count = CustomersCount(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
-        self.equipment_browser = EquipmentBrowser(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
-        self.etl_configuration = ETLConfiguration(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
-        self.genomes = Genomes(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
-        self.kpis = KPIS(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
-        self.licenses = Licenses(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
-        self.mail = Mail(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
-        self.platform_status = PlatformStatus(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
-        self.power_capacity = PowerCapacity(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
-        self.power_path = PowerPath(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
-        self.routing = Routing(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
-        self.sensor_mapping = SensorMapping(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
-        self.struxure_on = StruxureOn(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
-        self.svg = SVG(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
-        self.user_groups = UserGroups(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
-        self.user_message = UserMessage(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
-        self.users = Users(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
-        self.work_orders = WorkOrders(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
+        self.assets = _Assets(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
+        self.audit_trail = _AuditTrail(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
+        self.authentication = _Authentication(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
+        self.autentication_servers = _AuthenticationServers(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
+        self.backup = _Backup(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
+        self.certificates = _Certificates(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
+        self.change_request = _ChangeRequest(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
+        self.change_request_template = _ChangeRequestTemplate(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
+        self.configuration = _Configuration(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
+        self.custom_properties = _CustomProperties(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
+        self.customers = _Customers(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
+        self.customers_count = _CustomersCount(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
+        self.equipment_browser = _EquipmentBrowser(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
+        self.etl_configuration = _ETLConfiguration(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
+        self.genomes = _Genomes(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
+        self.kpis = _KPIS(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
+        self.licenses = _Licenses(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
+        self.mail = _Mail(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
+        self.platform_status = _PlatformStatus(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
+        self.power_capacity = _PowerCapacity(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
+        self.power_path = _PowerPath(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
+        self.routing = _Routing(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
+        self.sensor_mapping = _SensorMapping(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
+        self.struxure_on = _StruxureOn(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
+        self.svg = _SVG(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
+        self.user_groups = _UserGroups(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
+        self.user_message = _UserMessage(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
+        self.users = _Users(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
+        self.work_orders = _WorkOrders(host = self.host, username = self.username, password = self.password, ssl = self.ssl, timeout = self.timeout)
 
-class Assets:
+class _Assets:
     def __init__(self, host, username, password, ssl, timeout):
         if ssl == True:
             http_protocol = "https"
@@ -107,121 +107,118 @@ class Assets:
                 if split_path[1] in ["tag"]:
                     pass
 
-
-            
-
-class AuditTrail:
+class _AuditTrail:
     def __init__(self, host, username, password, ssl, timeout):
         pass
 
-class Authentication:
+class _Authentication:
     def __init__(self, host, username, password, ssl, timeout):
         pass
 
-class AuthenticationServers:
+class _AuthenticationServers:
     def __init__(self, host, username, password, ssl, timeout):
         pass
 
-class Backup:
+class _Backup:
     def __init__(self, host, username, password, ssl, timeout):
         pass
 
-class Certificates:
+class _Certificates:
     def __init__(self, host, username, password, ssl, timeout):
         pass
 
-class ChangeRequest:
+class _ChangeRequest:
     def __init__(self, host, username, password, ssl, timeout):
         pass
 
-class ChangeRequestTemplate:
+class _ChangeRequestTemplate:
     def __init__(self, host, username, password, ssl, timeout):
         pass
 
-class Configuration:
+class _Configuration:
     def __init__(self, host, username, password, ssl, timeout):
         pass
 
-class CustomProperties:
+class _CustomProperties:
     def __init__(self, host, username, password, ssl, timeout):
         pass
 
-class Customers:
+class _Customers:
     def __init__(self, host, username, password, ssl, timeout):
         pass
 
-class CustomersCount:
+class _CustomersCount:
     def __init__(self, host, username, password, ssl, timeout):
         pass
 
-class EquipmentBrowser:
+class _EquipmentBrowser:
     def __init__(self, host, username, password, ssl, timeout):
         pass
 
-class ETLConfiguration:
+class _ETLConfiguration:
     def __init__(self, host, username, password, ssl, timeout):
         pass
 
-class Genomes:
+class _Genomes:
     def __init__(self, host, username, password, ssl, timeout):
         pass
 
-class KPIS:
+class _KPIS:
     def __init__(self, host, username, password, ssl, timeout):
         pass
 
-class Licenses:
+class _Licenses:
     def __init__(self, host, username, password, ssl, timeout):
         pass
 
-class Mail:
+class _Mail:
     def __init__(self, host, username, password, ssl, timeout):
         pass
 
-class PlatformStatus:
+class _PlatformStatus:
     def __init__(self, host, username, password, ssl, timeout):
         pass
 
-class PowerCapacity:
+class _PowerCapacity:
     def __init__(self, host, username, password, ssl, timeout):
         pass
 
-class PowerPath:
+class _PowerPath:
     def __init__(self, host, username, password, ssl, timeout):
         pass
 
-class Routing:
+class _Routing:
     def __init__(self, host, username, password, ssl, timeout):
         pass
 
-class SensorMapping:
+class _SensorMapping:
     def __init__(self, host, username, password, ssl, timeout):
         pass
 
-class StruxureOn:
+class _StruxureOn:
     def __init__(self, host, username, password, ssl, timeout):
         pass
 
-class SVG:
+class _SVG:
     def __init__(self, host, username, password, ssl, timeout):
         pass
 
     def get_svg_asset_context(self):
         return {"" : ""}
 
-class UserGroups:
+class _UserGroups:
     def __init__(self, host, username, password, ssl, timeout):
         pass
 
-class UserMessage:
+class _UserMessage:
     def __init__(self, host, username, password, ssl, timeout):
         pass
 
-class Users:
+class _Users:
     def __init__(self, host, username, password, ssl, timeout):
         pass
 
-class WorkOrders:
+class _WorkOrders:
     def __init__(self, host, username, password, ssl, timeout):
         pass
 
