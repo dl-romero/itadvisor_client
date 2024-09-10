@@ -27,7 +27,7 @@ ita_client = ITAdvisor(
 my_genome = ita_client.genomes.get_genomes_by_id("9ecca877-7b9f-45e8-ac69-929b5ff87b7e")
 
 ```
-## Sub-Classes
+## Classes and Functions
 **assets**
 - get_assets()
 - patch_assets()
