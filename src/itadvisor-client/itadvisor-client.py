@@ -49,10 +49,66 @@ class ITAdvisor:
 
 class Assets:
     def __init__(self, host, username, password, ssl, timeout):
-        pass
+        if ssl == True:
+            http_protocol = "https"
+        else:
+            http_protocol = "http"
 
-    def get_assets(self, output):
-        return output
+        self.base_url = "{}://{}/api/current/assets?".format(http_protocol, host)
+        self.username = username
+        self.password = password
+        self.timeout = timeout
+
+    def get_assets(self, customer_id:str="", recursive:bool=False):
+        """
+         Args:
+            customer_id (str, optional): Param to see top level assets for a customer.
+            recursive (bool, optional): Param to return recursively locations and rooms; the parameter is only supported for non-tenant user and if customerId is not specified; it is treated as false if not specified
+        """
+        return customer_id
+    
+    def patch_assets(self, patch_assets_list:list):
+        """
+         Args: 
+            patch_assets_list (list): List must contain 1 or more items, items must be of dict type and contain the proper key value pairs.
+
+        Basic Properties: {"uuid": "d212a0ee-7fd0-11ee-b962-0242ac120002", "op": "replace", "path": "/name", "value": "new name"}
+            uuid - Unique ID of asset.
+            op - Operation type. Must be one of ['add', 'remove', 'replace']
+            path - Attribute property name. Must be one of ['/name', '/serialNumber', '/barcode', '/manufacturer, '/partNumber, '/modelName', '/description']
+            value - The new value of the attribute.
+
+        Custom Properties: {"uuid": "d212a0ee-7fd0-11ee-b962-0242ac120001", "op": "add", "path": "/customProperty/cp1", "value": "cp_value1"}
+            uuid - Unique ID of asset.
+            op - Operation type. Must be one of ['add', 'remove', 'replace']
+            path - Attribute property name. Must be "/customProperty/{name_of_custom_property}"
+            value - The new value of the attribute.
+
+        Tags: {"uuid": "d212a0ee-7fd0-11ee-b962-0242ac120001", "op": "add", "path": "/tag/tagName"}
+            uuid - Unique ID of asset.
+            op - Operation type. Must be one of ['add', 'remove']
+            path - Attribute property name. Must be "/tag/{name_of_tag}"
+        """
+        
+        for asset in patch_assets_list:
+            asset_uuid = asset["uuid"]
+            asset_op = asset["op"]
+            asset_path = asset["path"]
+            if "value" in asset:
+                asset_value = asset["value"]
+            split_path = asset_path.split("/") # 0=Empty, 1=Base Path, 2=CP Name or Tag Name
+            if len(split_path) == 2:
+                if split_path[1] in ["name", "serialNumber", "barcode", "manufacturer", "partNumber", "modelName", "description"]:
+                    pass
+
+            if len(split_path) == 3:
+                if split_path[1] in ["customProperty"]:
+                    pass
+                if split_path[1] in ["tag"]:
+                    pass
+
+
+            
 
 class AuditTrail:
     def __init__(self, host, username, password, ssl, timeout):
@@ -149,6 +205,9 @@ class StruxureOn:
 class SVG:
     def __init__(self, host, username, password, ssl, timeout):
         pass
+
+    def get_svg_asset_context(self):
+        return {"" : ""}
 
 class UserGroups:
     def __init__(self, host, username, password, ssl, timeout):
