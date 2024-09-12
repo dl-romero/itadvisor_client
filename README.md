@@ -24,13 +24,12 @@ ita_client = ITAdvisor(
     password = "fS0c13tY"
 )
 
-my_genome = ita_client.genomes.get_genomes_by_id("9ecca877-7b9f-45e8-ac69-929b5ff87b7e")
+my_genome = ita_client.genomes.get_genomes_by_id(genome_id="9ecca877-7b9f-45e8-ac69-929b5ff87b7e")
 
 ```
 ## Classes and Functions
 **assets**
-- get_assets()
-- patch_assets()
+- in-progress
 
 **audit_trail**
 - in-progress
@@ -45,7 +44,9 @@ my_genome = ita_client.genomes.get_genomes_by_id("9ecca877-7b9f-45e8-ac69-929b5f
 - in-progress
 
 **certificates**
-- in-progress
+- get_certificates()
+- add_certificate(certificate:str)
+- delete_certificate(certificate:str)
 
 **change_request**
 - in-progress
@@ -57,13 +58,16 @@ my_genome = ita_client.genomes.get_genomes_by_id("9ecca877-7b9f-45e8-ac69-929b5f
 - in-progress
 
 **custom_properties**
-- in-progress
+- get_definitions()
+- get_templates()
+- check_usage(cp_name:str, cp_value:str)
+- get_item_cp(item_id:str)
 
 **customers**
 - in-progress
 
 **customers_count**
-- in-progress
+- get_customers_count(root_location_id, only_active:bool=None, only_with_users:bool=None)
 
 **equipment_browser**
 - in-progress
@@ -72,19 +76,23 @@ my_genome = ita_client.genomes.get_genomes_by_id("9ecca877-7b9f-45e8-ac69-929b5f
 - in-progress
 
 **genomes**
-- in-progress
+- get_genomes(query:str=None, query_types:list=[], genomes:list=[], genome_source:str=None)
+- get_genome_by_id(genome_id:str, genome_library:str=None)
 
 **kpis**
 - in-progress
 
 **licenses**
-- in-progress
+- get_licenses()
+- add_license(license_key:str)
+- delete_license(license_key:str)
 
 **mail**
 - in-progress
 
 **platform_status**
-- in-progress
+- get_job_queue()
+- get_job_status()
 
 **power_capacity**
 - in-progress
