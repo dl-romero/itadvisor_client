@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### changed
 - More File Renames.
 - Added classis and functions
+## [0.0.16] - 2024-09-13
+### changed
+- More corrections
+
 ## [0.0.15] - 2024-09-13
 ### changed
 - More corrections
