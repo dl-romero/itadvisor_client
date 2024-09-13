@@ -3,12 +3,13 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "itadvisor-client"
-version = "0.0.14"
+name = "itadvisor_client"
+version = "0.0.15"
 authors = [
   { name="David Romero", email="dromero@dromero.dev" },
 ]
 description = "A python client for the Schneider Electric application IT Advisor."
+keywords = ["struxureware", "ecostruxure", "schneider-electric", "apc", "dco", "ita", "itadvisor", "data center operation"]
 readme = {file = "README.md", content-type = "text/markdown"}
 requires-python = ">=3.8"
 classifiers = [
@@ -17,7 +18,9 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 
+packages
+
 [project.urls]
-dromero = "https://www.linkedin.com/in/dromero1/"
+"LinkedIn" = "https://www.linkedin.com/in/dromero1/"
 Repository = "https://github.com/dl-romero/itadvisor_client"
 Issues = "https://github.com/dl-romero/itadvisor_client/issues"
