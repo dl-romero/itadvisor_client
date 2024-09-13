@@ -252,18 +252,27 @@ class _Backup:
     def upload_backup_file(self, backup_file:str):
         """
         Uploads backup file
+        curl -X 'POST' \
+        f'http://{self.base_url}/backup/backup-file' \
+        -H 'accept: application/json' \
+        -H 'Content-Type: multipart/form-data' \
+        -F 'backupFile=@{file_name};type=application/x-gzip'
+
         """
         session = requests.Session()
         if os.path.isfile(backup_file) != True:
             raise ValueError(f"The file specified `{backup_file}` does not exist.")
-        upload_data = {"form_field_name": open(backup_file, "rb")}
-        api_resource = f"{self.base_api_url}/backup/backup-file/"
+        upload_data = {"backupFile": open(backup_file, "rb"),
+                       "type": "application/x-gzip"
+                       }
+        api_resource = f"{self.base_api_url}/backup/backup-file"
         if self.verify not in [None, False]:
             session.verify = self.verify
             session.cert
         if self.cert != None:
             session.cert = self.cert
-        headers = {"Content-Type": "application/json"}
+        headers = {"Content-Type": "multipart/form-data",
+                   "accept": "application/json"}
         session.cookies.update(self.cookies)
         session.verify = self.verify
         api_auth = HTTPBasicAuth(self.username, self.password)
