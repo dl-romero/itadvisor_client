@@ -41,7 +41,13 @@ my_genome = ita_client.genomes.get_genomes_by_id(genome_id="9ecca877-7b9f-45e8-a
 - in-progress
 
 **backup**
-- in-progress
+- list_backup_files()
+- download_backup_file(file_name:str, download_directory:str)
+- upload_backup_file(backup_file:str)
+- get_backup_settings()
+- update_backup_settings(backup_retention_days:int, backup_location:str, fail_if_not_mounted:bool, backup_cleanup_enabled:bool)
+- trigger_restore(backup_file_name:str)
+- trigger_backup(backup_prefix:str="custom_")
 
 **certificates**
 - get_certificates()
