@@ -15,7 +15,7 @@ pip install itadvisor-client
 ## Documentation
 Example:
 ```
-import itadvisor_client
+from itadvisor_client import ITAdvisor
 
 # Mr. Robot Inspired Connection Details
 ita_client = ITAdvisor(
