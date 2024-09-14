@@ -9,6 +9,19 @@ from requests.auth import HTTPBasicAuth
 
 class _Genomes: # Done
     def __init__(self, connection_details:dict):
+        """
+        Initializes the _Genomes class with the provided connection details.
+        Args:
+            connection_details (dict): A dictionary containing the following keys:
+                - username (str): The username for authentication.
+                - password (str): The password for authentication.
+                - cookies (dict): Cookies to be used for the session.
+                - verify (bool): Whether to verify SSL certificates.
+                - cert (str or tuple): Path to SSL client certificate file or a tuple of (cert, key).
+                - timeout (int or float): The timeout duration for requests.
+                - base_api_url (str): The base URL for the API.
+        """
+
         self.username = connection_details["username"]
         self.password = connection_details["password"]
         self.cookies = connection_details["cookies"]
@@ -20,78 +33,21 @@ class _Genomes: # Done
     def get_genomes(self, query:str=None, query_types:list=[], genomes:list=[], genome_source:str=None):
         """
         query option is string that will be filtered with wild cards on both ends.
-        genome_source options ["LIBRARY", "USER"]
-        query_types options ["FLOOR_MOUNTABLE", "RACK_MOUNTABLE", "BLADE_ENCLOSURE_MOUNTABLE", "SWITCH_ENCLOSURE_MOUNTABLE", "SHELF_MOUNTABLE"]
-        genomes [
-        AIR_COOLED_CHILLER
-        ATS
-        BATTERY
-        BLADE
-        BLADE_ENCLOSURE
-        BLOCK
-        BREAKER
-        BREAKER_MODULE
-        BUNDLE_FLOOR
-        CACS
-        CAMERA
-        CDU
-        CHILLER
-        CONDENSER
-        COOLINGTOWER
-        CRAC
-        CRACFAN
-        CRAH
-        DOOR
-        DRIVE_ARRAY
-        DRYCOOLER
-        ENVIRONMENTAL_EQUIPMENT
-        ENVIRONMENTAL_POWER_EQUIPMENT
-        EPO
-        FIRE_SUPPRESSION
-        GAP
-        GENERATOR
-        GENERIC_POWERED_FLOORMOUNTABLE
-        HACS
-        INROOM
-        ISX_MANAGER
-        LADDER
-        LAYER1_NETWORK_GEAR
-        LAYER2_NETWORK_GEAR
-        LAYER3_NETWORK_GEAR
-        NETBOTZ_CENTRAL
-        NETWORK
-        NETWORK_CABLE
-        NONEPOWERED_FLOORMOUNTABLE
-        NONEPOWERED_RACKMOUNTABLE
-        OVERHEAD_COOLING_UNIT
-        PAC
-        PDU
-        RECTIFIER
-        PERFORATED_CEILING_TILE
-        PERFORATED_TILE
-        PERFORATED_TILES_4X
-        PERFORATED_TILES_8X
-        PERSON
-        POWER_PANEL
-        POWER_RECEPTACLE
-        PUMP
-        RACK
-        RACS
-        RDP
-        ROW
-        SERVER
-        SHELF
-        SWITCHGEAR
-        SWITCH_ENCLOSURE
-        SWITCH_MODULE
-        TELECOM
-        UPS
-        VERTICAL_GRILLE
-        WATER_TANK
-        WALL
-        WINDOW]
+        
         """
         session = requests.Session()
+        genome_source_options  =["LIBRARY", "USER"]
+        query_types_options = ["FLOOR_MOUNTABLE", "RACK_MOUNTABLE", "BLADE_ENCLOSURE_MOUNTABLE", "SWITCH_ENCLOSURE_MOUNTABLE", 
+                               "SHELF_MOUNTABLE"]
+        genomes_options =  ["AIR_COOLED_CHILLER", "ATS","BATTERY","BLADE","BLADE_ENCLOSURE","BREAKER", "BREAKER_MODULE", 
+                 "BUNDLE_FLOOR", "CACS", "CAMERA", "CDU", "CHILLER", "CONDENSER", "COOLINGTOWER", "CRAC",
+                 "CRACFAN", "CRAH", "DOOR", "DRIVE_ARRAY", "DRYCOOLER", "ENVIRONMENTAL_EQUIPMENT",  "ENVIRONMENTAL_POWER_EQUIPMENT", 
+                 "EPO", "FIRE_SUPPRESSION", "GAP", "GENERATOR","GENERIC_POWERED_FLOORMOUNTABLE","HACS", "INROOM", "ISX_MANAGER", 
+                 "LADDER", "LAYER1_NETWORK_GEAR", "LAYER2_NETWORK_GEAR", "LAYER3_NETWORK_GEAR", "NETBOTZ_CENTRAL", "NETWORK", 
+                 "NETWORK_CABLE", "NONEPOWERED_FLOORMOUNTABLE", "NONEPOWERED_RACKMOUNTABLE", "OVERHEAD_COOLING_UNIT",
+                 "PAC", "PDU", "RECTIFIER", "PERFORATED_CEILING_TILE", "PERFORATED_TILE", "PERFORATED_TILES_4X", "PERFORATED_TILES_8X",
+                 "PERSON", "POWER_PANEL", "POWER_RECEPTACLE", "PUMP", "RACK", "RACS", "RDP", "ROW", "SERVER", "SHELF", "SWITCHGEAR", 
+                 "SWITCH_ENCLOSURE", "SWITCH_MODULE", "TELECOM", "UPS", "VERTICAL_GRILLE", "WATER_TANK", "WALL", "WINDOW"]
         api_resource = f"{self.base_api_url}/genomes?"
         if query != None:
             api_resource += f"&query={query}"
@@ -119,9 +75,19 @@ class _Genomes: # Done
     
     def get_genome_by_id(self, genome_id:str, genome_library:str=None):
         """
-        returns Genome data. Default library is both.
-        Genome library option = LIBRARY or USER
+        Retrieve genome data by genome ID.
+        Args:
+            genome_id (str): The ID of the genome to retrieve.
+            genome_library (str, optional): The library source of the genome. 
+            Can be 'LIBRARY' or 'USER'. Defaults to both if not specified.
+        Returns:
+            Response: The HTTP response object containing the genome data.
+        Notes:
+            - The method uses HTTP Basic Authentication with the provided username and password.
+            - The session will use the specified SSL verification and client certificate if provided.
+            - The request will include any cookies stored in the session.
         """
+
         session = requests.Session()
         api_resource = f"{self.base_api_url}/genomes/{genome_id}"
         if genome_library != None:

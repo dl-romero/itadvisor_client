@@ -34,17 +34,51 @@ from .ita_modules import ita_work_orders
 class ITAdvisor:
     def __init__(self, host_name:str, username:str, password:str, protocol:str="https", cookies:dict={}, verify=None, cert=None, timeout:int=60):
         """
-        Initializes the `itadvisor-client` object with the provided parameters.
+        Initialize the ITAdvisorClient with the specified parameters.
         Args:
-            host_name (str): The host name of the API server.
+            host_name (str): The hostname of the IT Advisor server.
             username (str): The username for authentication.
             password (str): The password for authentication.
-            protocol (str ('http', 'https'), optional): The protocol to use for communication. Defaults to "https".
-            cookies (dict, optional): Cookies to include in the Request. Helpful when Zero Trust is implemented. 
-            verify ((None, False, "/path/to/certificate"), optional): Whether to verify SSL certificates. Defaults to None.
-            cert ((None, tuple, "/path/to/certificate"), optional): Client-side SSL certificate and key. Defaults to None
-            timeout (int, optional): The timeout value for API requests in seconds. Defaults to 60.
+            protocol (str, optional): The protocol to use for the connection, either 'http' or 'https'. Defaults to 'https'.
+            cookies (dict, optional): A dictionary of cookies to include in the requests. Defaults to {}.
+            verify (bool or None, optional): Whether to verify the server's TLS certificate. Defaults to None.
+            cert (str or tuple, optional): Path to a certificate file or a tuple of certificate files. Defaults to None.
+            timeout (int, optional): The timeout for the connection in seconds. Defaults to 60.
+        Raises:
+            ValueError: If the specified certificate file does not exist.
+            ValueError: If the protocol is not 'http' or 'https'.
+        Attributes:
+            assets: Instance of _Assets class for managing assets.
+            audit_trail: Instance of _AuditTrail class for managing audit trails.
+            authentication: Instance of _Authentication class for managing authentication.
+            autentication_servers: Instance of _AuthenticationServers class for managing authentication servers.
+            backup: Instance of _Backup class for managing backups.
+            certificates: Instance of _Certificates class for managing certificates.
+            change_request: Instance of _ChangeRequest class for managing change requests.
+            change_request_template: Instance of _ChangeRequestTemplate class for managing change request templates.
+            configuration: Instance of _Configuration class for managing configurations.
+            custom_properties: Instance of _CustomProperties class for managing custom properties.
+            customers: Instance of _Customers class for managing customers.
+            customers_count: Instance of _CustomersCount class for managing customer counts.
+            equipment_browser: Instance of _EquipmentBrowser class for managing equipment browsing.
+            etl_configuration: Instance of _ETLConfiguration class for managing ETL configurations.
+            genomes: Instance of _Genomes class for managing genomes.
+            kpis: Instance of _KPIS class for managing KPIs.
+            licenses: Instance of _Licenses class for managing licenses.
+            mail: Instance of _Mail class for managing mail.
+            platform_status: Instance of _PlatformStatus class for managing platform status.
+            power_capacity: Instance of _PowerCapacity class for managing power capacity.
+            power_path: Instance of _PowerPath class for managing power paths.
+            routing: Instance of _Routing class for managing routing.
+            sensor_mapping: Instance of _SensorMapping class for managing sensor mappings.
+            struxure_on: Instance of _StruxureOn class for managing StruxureOn.
+            svg: Instance of _SVG class for managing SVGs.
+            user_groups: Instance of _UserGroups class for managing user groups.
+            user_message: Instance of _UserMessage class for managing user messages.
+            users: Instance of _Users class for managing users.
+            work_orders: Instance of _WorkOrders class for managing work orders.
         """
+        
 
         if verify not in [None, False]:
             if not os.path.isfile(cert):
