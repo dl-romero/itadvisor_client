@@ -8,11 +8,11 @@ import shutil
 from requests.auth import HTTPBasicAuth
 
 class _Routing:
-    def __init__(self, base_api_url, username, password, cookies, verify, cert, timeout):
-        self.username = username
-        self.password = password
-        self.cookies = cookies
-        self.verify = verify
-        self.cert = cert
-        self.timeout = timeout
-        self.base_api_url = base_api_url
+    def __init__(self, connection_details:dict):
+        self.username = connection_details["username"]
+        self.password = connection_details["password"]
+        self.cookies = connection_details["cookies"]
+        self.verify = connection_details["verify"]
+        self.cert = connection_details["cert"]
+        self.timeout = connection_details["timeout"]
+        self.base_api_url = connection_details["base_api_url"]

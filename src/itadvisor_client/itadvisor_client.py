@@ -63,44 +63,45 @@ class ITAdvisor:
 
         if protocol not in ["http", "https"]:
             raise ValueError("The protocol must be either 'http' or 'https'.")
-            
-        self.username = username
-        self.password = password
-        self.verify = verify
-        self.cookies = cookies
-        self.cert = cert
-        self.timeout = timeout
-        self.base_api_url = f"{protocol}://{host_name}/api/current"
 
-        self.assets = ita_assets._Assets(base_api_url = self.base_api_url, username = self.username, password = self.password, cookies = self.cookies, verify=self.verify, cert=self.cert, timeout = self.timeout)
-        self.audit_trail = ita_audit_trail._AuditTrail(base_api_url = self.base_api_url, username = self.username, password = self.password, cookies = self.cookies, verify=self.verify, cert=self.cert, timeout = self.timeout)
-        self.authentication = ita_authentication._Authentication(base_api_url = self.base_api_url, username = self.username, password = self.password, cookies = self.cookies, verify=self.verify, cert=self.cert, timeout = self.timeout)
-        self.autentication_servers = ita_authentication_servers._AuthenticationServers(base_api_url = self.base_api_url, username = self.username, password = self.password, cookies = self.cookies, verify=self.verify, cert=self.cert, timeout = self.timeout)
-        self.backup = ita_backup._Backup(base_api_url = self.base_api_url, username = self.username, password = self.password, cookies = self.cookies, verify=self.verify, cert=self.cert, timeout = self.timeout)
-        self.certificates = ita_certificates._Certificates(base_api_url = self.base_api_url, username = self.username, password = self.password, cookies = self.cookies, verify=self.verify, cert=self.cert, timeout = self.timeout)
-        self.change_request = ita_change_request._ChangeRequest(base_api_url = self.base_api_url, username = self.username, password = self.password, cookies = self.cookies, verify=self.verify, cert=self.cert, timeout = self.timeout)
-        self.change_request_template = ita_change_request_template._ChangeRequestTemplate(base_api_url = self.base_api_url, username = self.username, password = self.password, cookies = self.cookies, verify=self.verify, cert=self.cert, timeout = self.timeout)
-        self.configuration = ita_configuration._Configuration(base_api_url = self.base_api_url, username = self.username, password = self.password, cookies = self.cookies, verify=self.verify, cert=self.cert, timeout = self.timeout)
-        self.custom_properties = ita_custom_properties._CustomProperties(base_api_url = self.base_api_url, username = self.username, password = self.password, cookies = self.cookies, verify=self.verify, cert=self.cert, timeout = self.timeout)
-        self.customers = ita_customers._Customers(base_api_url = self.base_api_url, username = self.username, password = self.password, cookies = self.cookies, verify=self.verify, cert=self.cert, timeout = self.timeout)
-        self.customers_count = ita_customers_count._CustomersCount(base_api_url = self.base_api_url, username = self.username, password = self.password, cookies = self.cookies, verify=self.verify, cert=self.cert, timeout = self.timeout)
-        self.equipment_browser = ita_equipment_browser._EquipmentBrowser(base_api_url = self.base_api_url, username = self.username, password = self.password, cookies = self.cookies, verify=self.verify, cert=self.cert, timeout = self.timeout)
-        self.etl_configuration = ita_etl_configuration._ETLConfiguration(base_api_url = self.base_api_url, username = self.username, password = self.password, cookies = self.cookies, verify=self.verify, cert=self.cert, timeout = self.timeout)
-        self.genomes = ita_genomes._Genomes(base_api_url = self.base_api_url, username = self.username, password = self.password, cookies = self.cookies, verify=self.verify, cert=self.cert, timeout = self.timeout)
-        self.kpis = ita_kpis._KPIS(base_api_url = self.base_api_url, username = self.username, password = self.password, cookies = self.cookies, verify=self.verify, cert=self.cert, timeout = self.timeout)
-        self.licenses = ita_licenses._Licenses(base_api_url = self.base_api_url, username = self.username, password = self.password, cookies = self.cookies, verify=self.verify, cert=self.cert, timeout = self.timeout)
-        self.mail = ita_mail._Mail(base_api_url = self.base_api_url, username = self.username, password = self.password, cookies = self.cookies, verify=self.verify, cert=self.cert, timeout = self.timeout)
-        self.platform_status = ita_platform_status._PlatformStatus(base_api_url = self.base_api_url, username = self.username, password = self.password, cookies = self.cookies, verify=self.verify, cert=self.cert, timeout = self.timeout)
-        self.power_capacity = ita_power_capacity._PowerCapacity(base_api_url = self.base_api_url, username = self.username, password = self.password, cookies = self.cookies, verify=self.verify, cert=self.cert, timeout = self.timeout)
-        self.power_path = ita_power_path._PowerPath(base_api_url = self.base_api_url, username = self.username, password = self.password, cookies = self.cookies, verify=self.verify, cert=self.cert, timeout = self.timeout)
-        self.routing = ita_routing._Routing(base_api_url = self.base_api_url, username = self.username, password = self.password, cookies = self.cookies, verify=self.verify, cert=self.cert, timeout = self.timeout)
-        self.sensor_mapping = ita_sensor_mapping._SensorMapping(base_api_url = self.base_api_url, username = self.username, password = self.password, cookies = self.cookies, verify=self.verify, cert=self.cert, timeout = self.timeout)
-        self.struxure_on = ita_struxure_on._StruxureOn(base_api_url = self.base_api_url, username = self.username, password = self.password, cookies = self.cookies, verify=self.verify, cert=self.cert, timeout = self.timeout)
-        self.svg = ita_svg._SVG(base_api_url = self.base_api_url, username = self.username, password = self.password, cookies = self.cookies, verify=self.verify, cert=self.cert, timeout = self.timeout)
-        self.user_groups = ita_user_groups._UserGroups(base_api_url = self.base_api_url, username = self.username, password = self.password, cookies = self.cookies, verify=self.verify, cert=self.cert, timeout = self.timeout)
-        self.user_message = ita_user_message._UserMessage(base_api_url = self.base_api_url, username = self.username, password = self.password, cookies = self.cookies, verify=self.verify, cert=self.cert, timeout = self.timeout)
-        self.users = ita_users._Users(base_api_url = self.base_api_url, username = self.username, password = self.password, cookies = self.cookies, verify=self.verify, cert=self.cert, timeout = self.timeout)
-        self.work_orders = ita_work_orders._WorkOrders(base_api_url = self.base_api_url, username = self.username, password = self.password, cookies = self.cookies, verify=self.verify, cert=self.cert, timeout = self.timeout)
+        connection_details = {
+            "username" : username,
+            "password" : password,
+            "verify" : verify,
+            "cookies" : cookies,
+            "cert" : cert,
+            "timeout" : timeout,
+            "base_api_url" : f"{protocol}://{host_name}/api/current"}
+
+        self.assets = ita_assets._Assets(connection_details)
+        self.audit_trail = ita_audit_trail._AuditTrail(connection_details)
+        self.authentication = ita_authentication._Authentication(connection_details)
+        self.autentication_servers = ita_authentication_servers._AuthenticationServers(connection_details)
+        self.backup = ita_backup._Backup(connection_details)
+        self.certificates = ita_certificates._Certificates(connection_details)
+        self.change_request = ita_change_request._ChangeRequest(connection_details)
+        self.change_request_template = ita_change_request_template._ChangeRequestTemplate(connection_details)
+        self.configuration = ita_configuration._Configuration(connection_details)
+        self.custom_properties = ita_custom_properties._CustomProperties(connection_details)
+        self.customers = ita_customers._Customers(connection_details)
+        self.customers_count = ita_customers_count._CustomersCount(connection_details)
+        self.equipment_browser = ita_equipment_browser._EquipmentBrowser(connection_details)
+        self.etl_configuration = ita_etl_configuration._ETLConfiguration(connection_details)
+        self.genomes = ita_genomes._Genomes(connection_details)
+        self.kpis = ita_kpis._KPIS(connection_details)
+        self.licenses = ita_licenses._Licenses(connection_details)
+        self.mail = ita_mail._Mail(connection_details)
+        self.platform_status = ita_platform_status._PlatformStatus(connection_details)
+        self.power_capacity = ita_power_capacity._PowerCapacity(connection_details)
+        self.power_path = ita_power_path._PowerPath(connection_details)
+        self.routing = ita_routing._Routing(connection_details)
+        self.sensor_mapping = ita_sensor_mapping._SensorMapping(connection_details)
+        self.struxure_on = ita_struxure_on._StruxureOn(connection_details)
+        self.svg = ita_svg._SVG(connection_details)
+        self.user_groups = ita_user_groups._UserGroups(connection_details)
+        self.user_message = ita_user_message._UserMessage(connection_details)
+        self.users = ita_users._Users(connection_details)
+        self.work_orders = ita_work_orders._WorkOrders(connection_details)
 
 if __name__ == "__main__":
     pass
