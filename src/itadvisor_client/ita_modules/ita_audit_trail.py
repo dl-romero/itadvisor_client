@@ -7,7 +7,7 @@ import json
 import shutil
 from requests.auth import HTTPBasicAuth
 
-class _AuditTrail:
+class _AuditTrail: # Done
     def __init__(self, connection_details:dict):
         self.username = connection_details["username"]
         self.password = connection_details["password"]
@@ -17,26 +17,25 @@ class _AuditTrail:
         self.timeout = connection_details["timeout"]
         self.base_api_url = connection_details["base_api_url"]
 
-    def entries(self, asset_ids:list, entry_types:list, from_timestamp, to_timestamp, return_offset:int=0, return_limt:int=25, locale:str="en"):
+    def entries(self, asset_ids:list, entry_types:list, from_timestamp_epoch, to_timestamp_epoch, return_offset:int=0, return_limt:int=25, locale:str="en"):
         # Need to make timestamps epoch
         """
         Returns a list of audit trail entries.
 
         Locale Options: 
-            English: "en", 
-            German: "de", 
-            Spanish: "es", 
-            Frensh: "fr", 
-            Italian: "it", 
-            Japanese: "ja", 
-            Korean: "ko", 
-            Russian: "ru", 
-            Portuguese - Brazil: "pt_BR", 
-            Simplified Chinese: "zh_CN", 
-            Traditional Chinese: "zh_TW"
-
+            "en": English
+            "de": German
+            "es": Spanish
+            "fr": French
+            "it": Italian
+            "ja": Japanese
+            "ko": Korean
+            "ru": Russian
+            "pt_BR": Portuguese - Brazil
+            "zh_CN": Simplified Chinese
+            "zh_TW": Traditional Chinese
             
-            entry-type	Description
+        Entry_Type	Options
             Available for all users:
                 "ASSETS": All asset related audit log entries (Default for users related to customers)
                 "ASSET_ADD": Asset additions
@@ -71,7 +70,7 @@ class _AuditTrail:
 
         locale_options = ["en", "de", "es", "fr", "it", "ja", "ko", "ru", "pt_BR", "zh_CN", "zh_TW"]
         if locale not in locale_options:
-            pass # Rais an Error 
+            raise ValueError(f"The locale {locale} is invalid.")
 
         entry_type_options = ["ASSETS", "ASSET_ADD", "ASSET_CHANGE", "ASSET_MOVE", "ASSET_REMOVE", "ALARMS", "ALARM_RAISED", "ALARM_REMOVED",
                 "ALL", "CHANGE_MANAGEMENT", "CHANGE_MANAGEMENT_WORK_ORDER", "CHANGE_MANAGEMENT_WORK_ORDER_TASK", "NETWORK_CABLE_TYPES",
@@ -80,7 +79,7 @@ class _AuditTrail:
         
         for entry_type in entry_types:
             if entry_type not in entry_type_options:
-                pass # Rais an Error 
+                raise ValueError(f"The entry_type {entry_type} is invalid.")
 
         asset_ids_url_list = []
         for asset_id in asset_ids:
@@ -92,7 +91,7 @@ class _AuditTrail:
            entry_types_url_list.append(f"entry-type={entry_type}")
         entry_types_url_entry = "&".join(entry_types_url_list)
 
-        api_resource = f"{self.base_api_url}/audit-trail-entries?{asset_ids_url_entry}&from=3546545614&to=23453135135&locale={locale}&limit={return_limt}&offset={return_offset}&{entry_types_url_entry}"
+        api_resource = f"{self.base_api_url}/audit-trail-entries?{asset_ids_url_entry}&from={from_timestamp_epoch}&to={to_timestamp_epoch}&locale={locale}&limit={return_limt}&offset={return_offset}&{entry_types_url_entry}"
         if self.verify not in [None, False]:
             session.verify = self.verify
             session.cert
