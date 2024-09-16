@@ -53,6 +53,7 @@ my_genome = ita_client.genomes.get_genomes_by_id(genome_id="9ecca877-7b9f-45e8-a
     - "ASSET_CHANGE": Asset changes
     - "ASSET_MOVE": Asset moves
     - "ASSET_REMOVE": Asset removals<BR>
+    <BR>
     Available for users not related to customers:<BR>
     - "ALARMS": All alarm related audit log entries
     - "ALARM_RAISED": Alarms raised
@@ -63,6 +64,7 @@ my_genome = ita_client.genomes.get_genomes_by_id(genome_id="9ecca877-7b9f-45e8-a
     - "CHANGE_MANAGEMENT_WORK_ORDER_TASK": Work order tasks
     - "NETWORK_CABLE_TYPES": Network cable types
     - "REPORT_CHANGED": Reports changes<BR>
+    <BR>
     Available for users not related to customers with enabling permission: SYSTEM_CONFIGURATION_ADMINISTRATOR and/or USER_RIGHTS_AND_AUTHENTICATION_SERVERS_ADMINISTRATOR:<BR>
     - "SYSTEM": All system related audit log entries (entry-types starting with SYSTEM_)
     - "SYSTEM_CAPACITY_HISTORY": Capacity history
