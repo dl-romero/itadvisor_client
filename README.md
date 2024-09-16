@@ -34,46 +34,46 @@ my_genome = ita_client.genomes.get_genomes_by_id(genome_id="9ecca877-7b9f-45e8-a
 **audit_trail**
 - entries(self, asset_ids:list, entry_types:list, from_timestamp_epoch, to_timestamp_epoch, return_offset:int=0, return_limt:int=25, locale:str="en")
   - Locale Options: 
-            "en": English
-            "de": German
-            "es": Spanish
-            "fr": French
-            "it": Italian
-            "ja": Japanese
-            "ko": Korean
-            "ru": Russian
-            "pt_BR": Portuguese - Brazil
-            "zh_CN": Simplified Chinese
-            "zh_TW": Traditional Chinese
+    - "en": English
+    - "de": German
+    - "es": Spanish
+    - "fr": French
+    - "it": Italian
+    - "ja": Japanese
+    - "ko": Korean
+    - "ru": Russian
+    - "pt_BR": Portuguese - Brazil
+    - "zh_CN": Simplified Chinese
+    - "zh_TW": Traditional Chinese
             
     - Entry_Type Options
         Available for all users:
-            "ASSETS": All asset related audit log entries (Default for users related to customers)
-            "ASSET_ADD": Asset additions
-            "ASSET_CHANGE": Asset changes
-            "ASSET_MOVE": Asset moves
-            "ASSET_REMOVE": Asset removals
+        - "ASSETS": All asset related audit log entries (Default for users related to customers)
+        - "ASSET_ADD": Asset additions
+        - "ASSET_CHANGE": Asset changes
+        - "ASSET_MOVE": Asset moves
+        - "ASSET_REMOVE": Asset removals
         Available for users not related to customers
-            "ALARMS": All alarm related audit log entries
-            "ALARM_RAISED": Alarms raised
-            "ALARM_REMOVED": Alarms removed
-            "ALL": All audit log entries.
-            "CHANGE_MANAGEMENT": All change management related audit log entries (entry-types starting with CHANGE)
-            "CHANGE_MANAGEMENT_WORK_ORDER": Work orders
-            "CHANGE_MANAGEMENT_WORK_ORDER_TASK": Work order tasks
-            "NETWORK_CABLE_TYPES": Network cable types
-            "REPORT_CHANGED": Reports changes
+        - "ALARMS": All alarm related audit log entries
+        - "ALARM_RAISED": Alarms raised
+        - "ALARM_REMOVED": Alarms removed
+        - "ALL": All audit log entries.
+        - "CHANGE_MANAGEMENT": All change management related audit log entries (entry-types starting with CHANGE)
+        - "CHANGE_MANAGEMENT_WORK_ORDER": Work orders
+        - "CHANGE_MANAGEMENT_WORK_ORDER_TASK": Work order tasks
+        - "NETWORK_CABLE_TYPES": Network cable types
+        - "REPORT_CHANGED": Reports changes
         Available for users not related to customers with enabling permission: SYSTEM_CONFIGURATION_ADMINISTRATOR and/or USER_RIGHTS_AND_AUTHENTICATION_SERVERS_ADMINISTRATOR:
-            "SYSTEM": All system related audit log entries (entry-types starting with SYSTEM_)
-            "SYSTEM_CAPACITY_HISTORY": Capacity history
-            "SYSTEM_CUSTOM_PROPERTIES": Custome properties
-            "SYSTEM_EXTERNAL_SYSTEMS": External systems
-            "SYSTEM_MAIL_SETTINGS": Mail settings
-            "SYSTEM_TAGS": Tags
-            "SYSTEM_USER_INFORMATION_CHANGED": User changes
-            "SYSTEM_USER_LOGINS": User logins
-            "SYSTEM_WORK_ORDERS": Work orders
-            "USER_MESSAGE": User messages
+        - "SYSTEM": All system related audit log entries (entry-types starting with SYSTEM_)
+        - "SYSTEM_CAPACITY_HISTORY": Capacity history
+        - "SYSTEM_CUSTOM_PROPERTIES": Custome properties
+        - "SYSTEM_EXTERNAL_SYSTEMS": External systems
+        - "SYSTEM_MAIL_SETTINGS": Mail settings
+        - "SYSTEM_TAGS": Tags
+        - "SYSTEM_USER_INFORMATION_CHANGED": User changes
+        - "SYSTEM_USER_LOGINS": User logins
+        - "SYSTEM_WORK_ORDERS": Work orders
+        - "USER_MESSAGE": User messages
 
 **authentication**
 - in-progress
