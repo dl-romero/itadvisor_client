@@ -47,13 +47,13 @@ my_genome = ita_client.genomes.get_genomes_by_id(genome_id="9ecca877-7b9f-45e8-a
     - "zh_TW": Traditional Chinese
             
   - Entry_Type Options<BR>
-    Available for all users:
+    Available for all users:<BR>
     - "ASSETS": All asset related audit log entries (Default for users related to customers)
     - "ASSET_ADD": Asset additions
     - "ASSET_CHANGE": Asset changes
     - "ASSET_MOVE": Asset moves
     - "ASSET_REMOVE": Asset removals<BR>
-    Available for users not related to customers
+    Available for users not related to customers:<BR>
     - "ALARMS": All alarm related audit log entries
     - "ALARM_RAISED": Alarms raised
     - "ALARM_REMOVED": Alarms removed
@@ -63,7 +63,7 @@ my_genome = ita_client.genomes.get_genomes_by_id(genome_id="9ecca877-7b9f-45e8-a
     - "CHANGE_MANAGEMENT_WORK_ORDER_TASK": Work order tasks
     - "NETWORK_CABLE_TYPES": Network cable types
     - "REPORT_CHANGED": Reports changes<BR>
-    Available for users not related to customers with enabling permission: SYSTEM_CONFIGURATION_ADMINISTRATOR and/or USER_RIGHTS_AND_AUTHENTICATION_SERVERS_ADMINISTRATOR:
+    Available for users not related to customers with enabling permission: SYSTEM_CONFIGURATION_ADMINISTRATOR and/or USER_RIGHTS_AND_AUTHENTICATION_SERVERS_ADMINISTRATOR:<BR>
     - "SYSTEM": All system related audit log entries (entry-types starting with SYSTEM_)
     - "SYSTEM_CAPACITY_HISTORY": Capacity history
     - "SYSTEM_CUSTOM_PROPERTIES": Custome properties
