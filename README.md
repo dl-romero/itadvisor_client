@@ -46,7 +46,7 @@ my_genome = ita_client.genomes.get_genomes_by_id(genome_id="9ecca877-7b9f-45e8-a
             "zh_CN": Simplified Chinese
             "zh_TW": Traditional Chinese
             
-    - Entry_Type	Options
+    - Entry_Type Options
         Available for all users:
             "ASSETS": All asset related audit log entries (Default for users related to customers)
             "ASSET_ADD": Asset additions
